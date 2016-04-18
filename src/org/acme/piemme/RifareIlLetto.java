@@ -1,6 +1,7 @@
 package org.acme.piemme;
 
 import org.acme.piemme.biancheria.AbstractBiancheriaFactory;
+import org.acme.piemme.biancheria.BiancheriaFactory;
 import org.acme.piemme.biancheria.Federa;
 import org.acme.piemme.biancheria.Lenzuolo;
 /**
@@ -10,7 +11,7 @@ import org.acme.piemme.biancheria.Lenzuolo;
 public class RifareIlLetto {
 	private AbstractBiancheriaFactory factory; 
 	public RifareIlLetto(String tipoBiancheria) {
-		this.factory = Assistente.scegliBiancheria(tipoBiancheria);
+		this.factory = BiancheriaFactory.getFactoryBy(tipoBiancheria);
 	}
 
 	public String copriMaterasso() {

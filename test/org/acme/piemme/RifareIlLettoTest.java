@@ -6,17 +6,23 @@ import org.junit.Test;
 
 public class RifareIlLettoTest {
 
+	private RifareIlLetto fareIlLetto;
+
 	@Test
 	public void conBiancheriaStarWars() {
-		RifareIlLetto fareIlLetto = new RifareIlLetto("Starwars");
-		assertEquals("cielo stellato", fareIlLetto.copriMaterasso());
-		assertEquals("Blu tinta unita", fareIlLetto.copriCuscino());
+		fareIlLetto = new RifareIlLetto("Starwars");
+		verificaIlTema("cielo stellato", fareIlLetto.copriMaterasso());
+		verificaIlTema("Blu tinta unita", fareIlLetto.copriCuscino());
 	}
 
 	@Test
 	public void conBiancheriaStarWinx() {
-		RifareIlLetto fareIlLetto = new RifareIlLetto("Winx");
-		assertEquals("Rosa", fareIlLetto.copriMaterasso());
-		assertEquals("Stelle gialle su rosa", fareIlLetto.copriCuscino());
+		fareIlLetto = new RifareIlLetto("Winx");
+		verificaIlTema("Rosa", fareIlLetto.copriMaterasso());
+		verificaIlTema("Stelle gialle su rosa", fareIlLetto.copriCuscino());
+	}
+
+	private void verificaIlTema(String temaAtteso, String temaEffettivo) {
+		assertEquals(temaAtteso, temaEffettivo);
 	}
 }
