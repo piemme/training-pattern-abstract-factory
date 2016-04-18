@@ -1,0 +1,14 @@
+Il pattern Abstract Factory:
+* fornisce un'interfaccia
+* per creare
+* oggetti correlati e dipendenti fra di loro
+* senza specificare le classi concrete
+
+
+Ruoli partecipanti:
+* Client
+* Factory astratta
+* Prodotto astratto
+* Factory concreta
+* Prodotto concreto
+
