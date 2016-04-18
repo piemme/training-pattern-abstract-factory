@@ -1,22 +1,22 @@
-package org.acme.piemme;
+package org.acme.piemme.biancheria;
 
-import org.acme.piemme.biancheria.AbstractBiancheriaFactory;
 import org.acme.piemme.biancheria.starwars.StarwarsBiancheriaFactory;
 import org.acme.piemme.biancheria.winx.WinxBiancheriaFactory;
 /**
  * Partecipante: nessuno
  * utility per che restituisce la concrete factory 
- * Deve stare nel package org.acme.piemme.biancheria? 
+ * La logica potrebbe essere contenuta nella AbstractBiancheriaFactory
+ * quindi AbstractBiancheriaFactory diventerebbe classe astratta e non interfaccia
  */
-public class Assistente {
-	static AbstractBiancheriaFactory scegliBiancheria(String tipoBiancheria) {
+public class BiancheriaFactory  {
+	public static AbstractBiancheriaFactory getFactoryBy(String tipoBiancheria) {
 	     switch (tipoBiancheria) {
          case "Starwars":
         	 return new StarwarsBiancheriaFactory();
          case "Winx":
         	 return new WinxBiancheriaFactory();
          default:
-             throw new IllegalArgumentException("biancheria non valida: " + tipoBiancheria);
-	     }
+             throw new IllegalArgumentException("tipo biancheria non valida: " + tipoBiancheria);
+	     }		
 	}
 }
